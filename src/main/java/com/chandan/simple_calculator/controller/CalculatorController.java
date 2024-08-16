@@ -28,6 +28,9 @@ public class CalculatorController {
 
     @GetMapping("/div")
     public double division(@RequestParam double a, @RequestParam double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not possible ");
+        }
 
        return  a/b;
     }
